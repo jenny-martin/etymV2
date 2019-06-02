@@ -1,4 +1,5 @@
-var router = require('express').Router();
+var express = require('express');
+var router = express.Router();
 var usersCtrl = require('../controllers/users');
 
 // GET /users
@@ -8,7 +9,8 @@ router.get('/users', usersCtrl.index);
 router.post('/words', isLoggedIn, usersCtrl.addWord);
 
 // DELETE /words/:id
-router.delete('/words/:id', usersCtrl.deleteWord);
+ router.delete('/words/:id', isLoggedIn, usersCtrl.deleteWord);
+
 
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();

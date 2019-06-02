@@ -31,7 +31,7 @@
   </div>
   <div class="container">
     <div id="search-row" class="row">
-      <h2 class="col s4 blue-grey-text text-darken-2">Users</h2>
+      <h5 class="col s4 blue-grey-text text-darken-2">Currently Viewing All Users & Word Lists</h5>
       <form action="/users" method="GET">
         <div class="col s3 offset-s3">
           <!-- search -->
@@ -42,13 +42,6 @@
           </div>
         </div>
         <div class="col s2">
-          <p>
-            <label for="sort-cohort">
-              <input name="sort" type="radio" id="sort-cohort" value="cohort" class="with-gap"
-                <%= sortKey === 'cohort' ? 'checked' : '' %>>
-              <span>Sort by Cohort</span>
-            </label>
-          </p>
           <p>
             <label for="sort-name">
               <input name="sort" type="radio" id="sort-name" value="name" class="with-gap"
@@ -71,18 +64,19 @@
               <% } else { %>
               <i class="small material-icons">perm_identity</i>
               <% } %>
+              <span class="student-name"><%= user.name %></span>
             </div>
             <ul class="collection">
               <% user.words.forEach(function(word) { %>
               <li class="collection-item blue-grey-text text-darken-2">
-              <!-- Add delete form - don't forget to install method-override -->
-              <span class="title"><%- word.text %></span>
-              <% if (word._id.equals(user && user._id)) { %>
-              <form action="/words/<%= word._id %>?_method=DELETE" method="POST" class="secondary-content">
-                <button type="submit" class="btn-small red-text">X</button>
-              </form>
-              <% } %>
-            </li>
+                <!-- Add delete form - don't forget to install method-override -->
+                <span class="title"><%- word.text %></span>
+                <% if (user._id.equals(user && user._id)) { %>
+                <form action="/words/<%= word._id %>?_method=DELETE" method="POST" class="secondary-content">
+                  <button type="submit" class="btn-small red-text">X</button>
+                </form>
+                <% } %>
+              </li>
               <% }) %>
             </ul>
             <% if (user._id.equals(user && user._id)) { %>
@@ -91,6 +85,7 @@
                 <input type="text" name="text" class="white-text">
                 <button type="submit" class="btn white-text">Add Word</button>
               </form>
+              
             </div>
             <% } %>
           </div>

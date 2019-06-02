@@ -3,7 +3,7 @@ const User = require('../models/user');
 module.exports = {
   index,
   addWord,
-  deleteWord
+  deleteWord,
 };
 
 function index(req, res, next) {
@@ -37,3 +37,4 @@ function deleteWord(req, res, next) {
     });
   });
 }
+
