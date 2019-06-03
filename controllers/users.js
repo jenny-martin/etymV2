@@ -4,6 +4,7 @@ module.exports = {
   index,
   addWord,
   deleteWord,
+  addOrigin
 };
 
 function index(req, res, next) {
@@ -24,6 +25,14 @@ function index(req, res, next) {
 
 function addWord(req, res, next) {
   req.user.words.push(req.body);
+  req.user.save(function(err) {
+    res.redirect('/users');
+  })
+}
+
+function addOrigin(req, res, next) {
+  req.user.origins.push(req.body);
+  console.log(origins);
   req.user.save(function(err) {
     res.redirect('/users');
   })

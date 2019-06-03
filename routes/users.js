@@ -7,6 +7,7 @@ router.get('/users', usersCtrl.index);
 
 //POST /words
 router.post('/words', isLoggedIn, usersCtrl.addWord);
+router.post('/words', isLoggedIn, usersCtrl.addOrigin);
 
 
 
