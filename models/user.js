@@ -1,8 +1,15 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+var etymSchema = new Schema({
+  origin: String
+}, {
+  timestamps: true
+});
+
 var wordSchema = new Schema({
-    text: String
+    text: String,
+    origins: [etymSchema]
   }, {
     timestamps: true
   });

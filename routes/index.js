@@ -2,9 +2,9 @@ var router = require('express').Router();
 var passport = require('passport');
 
 
-// The root route renders our only view
+// get Home Page 
 router.get('/', function (req, res) {
-  res.redirect('/users');
+  res.render('index', {title: 'ETYM', user: req.user });
 });
 
 //Google OAuth login route

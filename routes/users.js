@@ -8,6 +8,8 @@ router.get('/users', usersCtrl.index);
 //POST /words
 router.post('/words', isLoggedIn, usersCtrl.addWord);
 
+
+
 // DELETE /words/:id
  router.delete('/words/:id', isLoggedIn, usersCtrl.deleteWord);
 

@@ -19,14 +19,14 @@ function index(req, res, next) {
       name: req.query.name, 
       sortKey 
     });
-  });
+  })
 }
 
 function addWord(req, res, next) {
   req.user.words.push(req.body);
   req.user.save(function(err) {
     res.redirect('/users');
-  });
+  })
 }
 
 function deleteWord(req, res, next) {
@@ -34,7 +34,8 @@ function deleteWord(req, res, next) {
     user.words.id(req.params.id).remove();
     user.save(function(err) {
       res.redirect('/users');
-    });
-  });
+    })
+  })
 }
+
 
