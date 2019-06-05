@@ -8,9 +8,18 @@ link to GitHub repository:
 
 link to wireframe: 
 
-![Wireframe-link](https://wireframepro.mockflow.com/view/  
-etym-project
-)
+![Wireframe-link](https://wireframepro.mockflow.com/view/etym-project)
+
+link to Trello board:
+![https://trello.com/b/ovTpKFdR/unit-2-project-word-of-the-day-app]
+
+Entity Relationship Diagram: 
+
+User -----< Words
+
+Words -----< Origins
+
+
 
 Title: ETYM an etymology tracking application
 
@@ -24,7 +33,7 @@ The user can save words and their origins to their unique list by logging into t
 
 Screenshots: 
 
-![Screenshot-Home-Page] (https://i.imgur.com/WLdJOie.png)
+![Screenshot-Home-Page] (icloud drive/desktop/project images/home-page.png)
 
 ![Screenshot-After-Login] (https://i.imgur.com/R1gY85U.png)
 
